@@ -9,9 +9,9 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     <div className="md:col-span-2">
                         <div className="flex items-center gap-4 mb-4">
-                            <span className="w-11 h-11 rounded-full bg-[#0c1113] text-[#feeb01] flex items-center justify-center font-semibold">DR</span>
+                            <span className="w-11 h-11 rounded-full bg-[#0c1113] text-[#feeb01] flex items-center justify-center font-semibold">CG</span>
                             <div>
-                                <h3 className="text-white text-lg font-semibold">DeepReview</h3>
+                                <h3 className="text-white text-lg font-semibold">Code Guardian</h3>
                                 <p className="text-sm text-slate-400">Personal code reviews, made simple.</p>
                             </div>
                         </div>
@@ -38,7 +38,7 @@ export default function Footer() {
                 </div>
 
                 <div className="border-t border-white/5 mt-10 pt-6 flex flex-col md:flex-row items-center justify-between text-sm text-slate-500">
-                    <div>© {year} DeepReview — Built with care for developers.</div>
+                    <div>© {year} Code Guardian — Built with care for developers.</div>
 
                     <div className="flex items-center gap-6 mt-3 md:mt-0">
                         <a href="/terms" className="hover:text-[#feeb01]">Terms</a>

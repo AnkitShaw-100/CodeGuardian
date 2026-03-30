@@ -19,9 +19,9 @@ export default function Navbar({ navItems = [] }) {
         <div className="w-full">
             <div className="flex items-center justify-between px-4 py-2 rounded-full">
                 <div className="flex items-center gap-3">
-                    <div className="w-11 h-11 rounded-full text-xl flex items-center justify-center text-[#feeb01] font-semibold bg-gray-800">DR</div>
+                    <div className="w-11 h-11 rounded-full text-xl flex items-center justify-center text-[#feeb01] font-semibold bg-gray-800">CG</div>
                     <div>
-                        <h1 className="text-base font-semibold">DeepReview</h1>
+                        <h1 className="text-base font-semibold">Code Guardian</h1>
                     </div>
                 </div>
 

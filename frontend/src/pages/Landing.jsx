@@ -8,7 +8,7 @@ export default function Landing() {
                 <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
                     <div>
                         <h1 className="text-4xl sm:text-5xl font-bold text-white">Paste your code. Get a deep, actionable review.</h1>
-                        <p className="text-slate-400 max-w-2xl">DeepReview analyzes your code with an LLM-powered engine to find bugs, security issues, style problems and provides clear remediation steps you can act on immediately.</p>
+                        <p className="text-slate-400 max-w-2xl">Code Guardian analyzes your code with an LLM-powered engine to find bugs, security issues, style problems and provides clear remediation steps you can act on immediately.</p>
 
                         <div className="flex flex-col sm:flex-row sm:items-center gap-4 mt-4">
                             <a href="/playground" className="inline-flex items-center px-5 py-3 bg-[#feeb01] text-[#0c1113] font-semibold rounded-xl shadow">Try Playground</a>
@@ -30,7 +30,7 @@ export default function Landing() {
             {/* Features */}
             <section className="px-6 md:px-12 text-center">
                 <div className="max-w-6xl mx-auto">
-                    <h3 className="text-2xl text-white font-semibold mb-6">How DeepReview helps</h3>
+                    <h3 className="text-2xl text-white font-semibold mb-6">How Code Guardian helps</h3>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         <div className="p-6 rounded-2xl bg-[#151a1b] border border-white/5">

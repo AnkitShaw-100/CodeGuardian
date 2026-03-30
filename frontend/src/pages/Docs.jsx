@@ -4,7 +4,7 @@ const SECTIONS = [
   {
     id: 'overview',
     title: 'Overview',
-    body: `DeepReview is an AI-powered code review assistant that finds bugs, surfaces best-practices, and suggests improvements. Review single files in the Playground or integrate programmatically via the API.`
+    body: `Code Guardian is an AI-powered code review assistant that finds bugs, surfaces best-practices, and suggests improvements. Review single files in the Playground or integrate programmatically via the API.`
   },
   {
     id: 'getting-started',
@@ -24,7 +24,7 @@ const SECTIONS = [
   {
     id: 'faq',
     title: 'FAQ & Troubleshooting',
-    body: `Common issues and tips for using DeepReview effectively.`
+    body: `Common issues and tips for using Code Guardian effectively.`
   }
 ]
 
@@ -46,7 +46,7 @@ export default function Docs() {
         <aside className="md:col-span-1">
           <div className="sticky top-10 space-y-4">
             <h2 className="text-3xl font-extrabold text-white">Documentation</h2>
-            <p className="text-slate-400">Everything you need to get the most out of DeepReview.</p>
+            <p className="text-slate-400">Everything you need to get the most out of Code Guardian.</p>
 
             <nav className="mt-2 flex flex-col gap-2">
               {filtered.map(section => (
@@ -77,7 +77,7 @@ export default function Docs() {
             {activeSection.id === 'overview' && (
               <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="p-4">
-                  <h4 className="text-white font-semibold mb-2">What DeepReview does</h4>
+                  <h4 className="text-white font-semibold mb-2">What Code Guardian does</h4>
                   <ul className="list-disc ml-5 text-slate-300 space-y-1">
                     <li>Finds bugs and anti-patterns</li>
                     <li>Suggests fixes and code improvements</li>
@@ -88,7 +88,7 @@ export default function Docs() {
 
                 <div className="p-4">
                   <h4 className="text-white font-semibold mb-2">Use cases</h4>
-                  <p className="text-slate-300">From quick single-file checks to automated PR pipelines, DeepReview adapts to your workflow.</p>
+                  <p className="text-slate-300">From quick single-file checks to automated PR pipelines, Code Guardian adapts to your workflow.</p>
                 </div>
               </section>
             )}
