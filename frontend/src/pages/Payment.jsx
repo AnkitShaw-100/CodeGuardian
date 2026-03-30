@@ -31,7 +31,7 @@ export default function Payment() {
           </p>
         </div>
 
-        <div className="max-w-xl mx-auto bg-[#141b1b] p-6 rounded-lg border border-white/5">
+        <div className="max-w-xl mx-auto bg-[#141b1b] p-6 rounded-2xl border border-white/6">
           {/* Plan Summary */}
           <div className="mb-6">
             <h3 className="text-lg font-semibold text-white mb-2">
@@ -52,7 +52,7 @@ export default function Payment() {
               <span>Included</span>
             </div>
 
-            <div className="border-t border-white/5 mt-4 pt-4 flex justify-between text-white font-semibold">
+            <div className="border-t border-white/6 mt-4 pt-4 flex justify-between text-white font-semibold">
               <span>Total</span>
               <span>
                 {priceParam

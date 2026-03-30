@@ -50,7 +50,7 @@ function renderReview(data) {
             <h4 className="mb-2">Issues</h4>
             <div className="space-y-3">
                 {data.issues.map((it, i) => (
-                    <div key={i} className="p-3 bg-[#141b1b] rounded-md border border-white/5">
+                    <div key={i} className="p-3 bg-[#141b1b] rounded-md border border-white/6 hover:border-[#feeb01]/30 transition-all">
                         <div className="flex items-start justify-between">
                             <div className="text-sm font-semibold text-white">{it.title || it.message || `Issue ${i + 1}`}</div>
                             <div className="text-xs text-slate-400">{it.severity || it.level || ''} {it.line ? `· line ${it.line}` : ''}</div>
@@ -110,7 +110,7 @@ export default function Playground() {
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-7xl mx-auto px-6 py-8 min-h-[80vh]">
             {/* Editor (left) */}
-            <div className="bg-[#141b1b] rounded-xl p-4 border border-white/5 h-full flex flex-col">
+            <div className="bg-[#141b1b] rounded-2xl p-4 border border-white/6 h-full flex flex-col hover:border-[#feeb01]/30 transition-all">
                 <div className="flex items-center justify-between mb-3 text-slate-400">
                     <div className="font-semibold">Playground</div>
                 </div>
@@ -118,7 +118,7 @@ export default function Playground() {
                 <textarea
                     value={code}
                     onChange={e => setCode(e.target.value)}
-                    className="w-full flex-1 min-h-[40vh] resize-none bg-[#081018] p-3 rounded-md text-sm font-mono border border-white/5 text-slate-100"
+                    className="w-full flex-1 min-h-[40vh] resize-none bg-[#081018] p-3 rounded-md text-sm font-mono border border-white/6 text-slate-100"
                 />
 
                 <div className="mt-3 grid grid-cols-2 gap-3">
@@ -141,7 +141,7 @@ export default function Playground() {
             </div>
 
             {/* Review (right) */}
-            <div className="bg-[#141b1b] rounded-xl p-4 border border-white/5 h-full flex flex-col">
+            <div className="bg-[#141b1b] rounded-2xl p-4 border border-white/6 h-full flex flex-col hover:border-[#feeb01]/30 transition-all">
                 <div className="flex items-center justify-between mb-3">
                     <div>
                         <h3 className="text-lg font-semibold text-white">Review</h3>

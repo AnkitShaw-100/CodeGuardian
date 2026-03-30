@@ -18,7 +18,7 @@ export default function Pricing() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start min-h-[60vh]">
-                <article className="rounded-2xl bg-[#141b1b] border border-white/6 p-8 transform scale-100 shadow-xl h-full flex flex-col">
+                <article className="rounded-2xl bg-[#141b1b] border border-white/6 p-8 transform scale-100 shadow-xl h-full flex flex-col hover:border-[#feeb01]/30 transition-all">
                     <div className="flex items-start justify-between">
                         <div>
                             <h3 className="text-lg font-semibold text-white">Free</h3>
@@ -40,7 +40,7 @@ export default function Pricing() {
                         <button onClick={() => navigate('/payment?plan=Free&price=0')} className={primaryBtn}>Choose Free</button>
                     </div>
                 </article>
-                <article className="rounded-2xl bg-[#141b1b] border border-white/6 p-8 transform scale-100 shadow-xl h-full flex flex-col">
+                <article className="rounded-2xl bg-[#141b1b] border border-[#feeb01]/30 p-8 transform scale-100 shadow-xl h-full flex flex-col hover:border-[#feeb01]/50 transition-all">
                     <div className="flex items-start justify-between">
                         <div>
                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#feeb01]/10 text-[#feeb01] text-xs font-semibold">Most popular</div>
@@ -64,7 +64,7 @@ export default function Pricing() {
                         <button onClick={() => navigate('/payment?plan=Pro&price=5')} className={primaryBtn}>Choose Pro</button>
                     </div>
                 </article>
-                <article className="rounded-2xl bg-[#141b1b] border border-white/6 p-8 transform scale-100 shadow-xl h-full flex flex-col">
+                <article className="rounded-2xl bg-[#141b1b] border border-white/6 p-8 transform scale-100 shadow-xl h-full flex flex-col hover:border-[#feeb01]/30 transition-all">
                     <div className="flex items-start justify-between">
                         <div>
                             <h3 className="text-lg font-semibold text-white">Enterprise</h3>

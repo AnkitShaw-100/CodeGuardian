@@ -45,8 +45,8 @@ export default function Docs() {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
         <aside className="md:col-span-1">
           <div className="sticky top-10 space-y-4">
-            <h2 className="text-3xl font-extrabold text-white">Documentation</h2>
-            <p className="text-slate-400">Everything you need to get the most out of Code Guardian.</p>
+            <h2 className="text-2xl font-bold text-white">Documentation</h2>
+            <p className="text-slate-400 text-sm">Everything you need to get the most out of Code Guardian.</p>
 
             <nav className="mt-2 flex flex-col gap-2">
               {filtered.map(section => (
@@ -61,7 +61,7 @@ export default function Docs() {
           </div>
         </aside>
 
-        <main className="md:col-span-3 bg-[#141b1b] border border-white/5 rounded-2xl p-6 text-slate-300 min-h-[70vh]">
+        <main className="md:col-span-3 bg-[#141b1b] border border-white/6 rounded-2xl p-6 text-slate-300 min-h-[70vh] hover:border-[#feeb01]/30 transition-all">
           <div className="flex items-start justify-between">
             <div>
               <h3 className="text-3xl text-white font-extrabold mb-2">{activeSection.title}</h3>
