@@ -27,11 +27,83 @@ function prettifyCode(raw) {
     return out.join('\n')
 }
 
+function parseMarkdown(text) {
+    // Parse markdown: **bold**, `code`, and bullet points
+    const parts = []
+    let remaining = text
+    let key = 0
+
+    while (remaining.length > 0) {
+        // Check for **bold**
+        const boldMatch = remaining.match(/\*\*(.*?)\*\*/)
+        // Check for `code`
+        const codeMatch = remaining.match(/`([^`]+)`/)
+        
+        let nextMatch = null
+        let isCode = false
+
+        if (boldMatch && codeMatch) {
+            nextMatch = boldMatch.index < codeMatch.index ? boldMatch : codeMatch
+            isCode = boldMatch.index >= codeMatch.index
+        } else if (boldMatch) {
+            nextMatch = boldMatch
+        } else if (codeMatch) {
+            nextMatch = codeMatch
+            isCode = true
+        }
+
+        if (nextMatch) {
+            // Add text before match
+            if (nextMatch.index > 0) {
+                parts.push(<span key={key++}>{remaining.slice(0, nextMatch.index)}</span>)
+            }
+            
+            // Add matched element
+            if (isCode) {
+                parts.push(<code key={key++} className="bg-gray-900 px-1.5 py-0.5 rounded text-[#feeb01] font-mono text-xs">{nextMatch[1]}</code>)
+                remaining = remaining.slice(nextMatch.index + nextMatch[0].length)
+            } else {
+                parts.push(<span key={key++} className="font-semibold text-[#feeb01]">{nextMatch[1]}</span>)
+                remaining = remaining.slice(nextMatch.index + nextMatch[0].length)
+            }
+        } else {
+            // No more matches
+            parts.push(<span key={key++}>{remaining}</span>)
+            remaining = ''
+        }
+    }
+
+    return parts
+}
+
 function renderReview(data) {
     if (!data) return null
+    
     if (typeof data === 'string') {
-        // split into paragraphs for readability
-        return data.split(/\n\s*\n/).map((p, i) => <p key={i} className="mb-3 text-slate-200">{p}</p>)
+        // Split by lines and process
+        const lines = data.split('\n').filter(l => l.trim())
+        
+        return lines.map((line, i) => {
+            const trimmed = line.trim()
+            
+            // Check if it's a bullet point
+            if (/^[\*\•\-]/.test(trimmed)) {
+                const content = trimmed.replace(/^[\*\•\-]\s*/, '')
+                return (
+                    <div key={i} className="mb-2 ml-4 text-slate-200 leading-relaxed flex gap-2">
+                        <span className="text-[#feeb01] flex-shrink-0">•</span>
+                        <div className="flex-1">{parseMarkdown(content)}</div>
+                    </div>
+                )
+            }
+            
+            // Regular paragraph
+            return (
+                <p key={i} className="mb-3 text-slate-200 leading-relaxed">
+                    {parseMarkdown(trimmed)}
+                </p>
+            )
+        })
     }
 
     // if object, look for common fields
@@ -50,7 +122,7 @@ function renderReview(data) {
             <h4 className="mb-2">Issues</h4>
             <div className="space-y-3">
                 {data.issues.map((it, i) => (
-                    <div key={i} className="p-3 bg-[#141b1b] rounded-md border border-white/6 hover:border-[#feeb01]/30 transition-all">
+                    <div key={i} className="p-3 bg-[#141b1b] rounded-md border border-white/6">
                         <div className="flex items-start justify-between">
                             <div className="text-sm font-semibold text-white">{it.title || it.message || `Issue ${i + 1}`}</div>
                             <div className="text-xs text-slate-400">{it.severity || it.level || ''} {it.line ? `· line ${it.line}` : ''}</div>

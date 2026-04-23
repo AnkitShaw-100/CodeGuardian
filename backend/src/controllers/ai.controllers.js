@@ -12,14 +12,15 @@ export default async function aiController(req, res) {
     }
 
     const prompt = `
-Quick code review.
+Quick code review with formatting.
 
-Constraints:
+Instructions:
 - Max 200 words
-- Plain text only
-- Write in proper bullet format
+- Use **text** for important words/issues to highlight them
+- Use bullet points (- or •) for clarity
+- Format: Issues, Suggestions, Best Practices
 - Skip obvious points
-- If no issues, say "No issues found"
+- If no issues, say "✓ No critical issues found"
 
 Code:
 ${code}
