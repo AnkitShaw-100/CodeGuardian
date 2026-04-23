@@ -91,7 +91,7 @@ function renderReview(data) {
                 const content = trimmed.replace(/^[\*\•\-]\s*/, '')
                 return (
                     <div key={i} className="mb-2 ml-4 text-slate-200 leading-relaxed flex gap-2">
-                        <span className="text-[#feeb01] flex-shrink-0">•</span>
+                        <span className="text-[#feeb01] shrink-0">•</span>
                         <div className="flex-1">{parseMarkdown(content)}</div>
                     </div>
                 )

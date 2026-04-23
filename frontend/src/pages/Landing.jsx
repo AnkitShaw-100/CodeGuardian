@@ -128,7 +128,7 @@ export default function Landing() {
                         {features.map((feature, idx) => (
                             <div key={idx} className="p-6 rounded-2xl bg-[#141b1b] border border-white/6 hover:border-[#feeb01]/30 transition-all">
                                 <div className="flex items-center gap-2 mb-2">
-                                    <div className="flex-shrink-0">
+                                    <div className="shrink-0">
                                         {feature.icon}
                                     </div>
                                     <h4 className="text-base text-white font-semibold">{feature.title}</h4>
@@ -173,7 +173,7 @@ export default function Landing() {
                         <div className="space-y-3">
                             {benefits.map((benefit, idx) => (
                                 <div key={idx} className="flex items-center gap-3">
-                                    <div className="flex-shrink-0">
+                                    <div className="shrink-0">
                                         {benefit.icon}
                                     </div>
                                     <span className="text-white text-base">{benefit.text}</span>
